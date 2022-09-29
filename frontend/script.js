@@ -80,17 +80,18 @@ const monthComponent = function(nth, name, days){
     }
 
     return`
-    <section id="${nth}"class= "${name}">
-        <h2>${name}</h2>
-        <div class= "days">${daysHTML}</div>
-    </section>
+        <section id="${nth}"class= "${name}">
+            <h2>${name}</h2>
+            <div class="days">${daysHTML}</div>
+        </section>
     `
-}
+};  
 
 const dayComponent = function(dayCount)
 {
 return`
-<div class="day">${dayCount}</div>`}
+    <div class="day">${dayCount}</div>`;
+};
 
 console.log("hello");
 console.log(year[0])
@@ -110,13 +111,20 @@ buttonElement.addEventListener("click",function(){
         buttonElement.setAttribute("disabled","");
     }*/
 
-    for(let monthIndex=0; monthIndex<0; monthIndex++){
-        rootElement.insertAdjacentHTML("beforeend",monthComponent(year[monthIndex].nth, year[monthIndex].month, year[monthIndex].days));
+    for(let monthIndex=0; monthIndex<12; monthIndex++){
+        rootElement.insertAdjacentHTML
+        ("beforeend",
+        monthComponent(
+            year[monthIndex].nth, 
+            year[monthIndex].month, 
+            year[monthIndex].days
+            )
+        );
     }
-
+});
 
 
 //rootElement.insertAdjacentHTML("beforeend",monthComponent(year[monthIndex].nth, year[monthIndex].month, year[monthIndex].days));
 
 //rootElement.insertAdjacentHTML("beforeend",monthComponent(2, "February", 28));
-//rootElement.style.color="blue" nem szabad csinálni, csak CSS-ben
+//rootElement.style.color="blue" nem szabad csinálni, csak CSS-ben 
