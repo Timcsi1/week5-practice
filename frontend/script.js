@@ -83,22 +83,22 @@ const monthComponent = function(nth, name, days){
         <section id="${nth}"class= "${name}">
             <h2>${name}</h2>
             <div class="days">${daysHTML}</div>
-            <div class="selected=
+            <div class="selected-days"></div>
         </section>
     `
 };  
 
-const dayComponent = function(dayCount)
-{
-return`
-    <div class="day">${dayCount}</div>`;
-};
+const dayComponent = function(dayCount){
+    return`
+    <div class="day">${dayCount}</div>`
+}
 
-console.log("hello");
-console.log(year[0])
+/*console.log("hello");
+console.log(year[0])*/
+
 const rootElement =document.querySelector("#root");
 
-rootElement.insertAdjacentHTML("beforeend","<button>add month</button>");
+rootElement.insertAdjacentHTML("beforeend","<button>Add months</button>");
 
 const buttonElement = rootElement.querySelector("button");
 
@@ -122,9 +122,29 @@ buttonElement.addEventListener("click",function(){
             year[monthIndex].days)
         );
     }
+
+initJanuaryEvents();
+
 })
 
-//    initJanuaryEventListener();
+const hideDays = function(days) {
+    for (let day of days) {
+    day.classList.add("hidden");
+    } 
+}
+const showDayInfo = function(dayIndex){
+    let selectedDay = document.querySelector(".January .selected-day");
+    selectedDay.textContent = `January${dayIndex}`
+}
+const initJanuaryEvents = function () {
+    let days = document.querySelectorAll(".January .days .day");
+    for(let day of days) {
+        day.addEventListener("click",function(){
+         hideDays(days);
+         showDayInfo(day.textContent);
+         })   
+     } 
+    }
 
 const dayElements = document.querySelectorAll(".day")
 
@@ -137,26 +157,6 @@ for(let i=1; i<dayElements.length; i++){
     day.addEventListener("click",function(event){
         event.target.classlist.toggle("clicked")
     })*/
-
-
-const hideDays= function(days) {
-    for (let day of days) {
-    day.classList.add("hidden");
-    }
-}
-const showDayInfo=function(dayIndex){
-    let selectedDay=document.querySelector(".January.selected-day");
-    selectedDay.textContent=`January ${dayIndex}`
-}
-const initJanuaryEvent= function(){
-   let days = document.querySelectorAll(".January.days.day");
-   for(let day of days) {
-   day.addEventListener("click",function(){
-        hideDays(days);
-        showDayInfo(day.textContent);
-    })   
-} 
-}
 
 //rootElement.insertAdjacentHTML("beforeend",monthComponent(year[monthIndex].nth, year[monthIndex].month, year[monthIndex].days));
 
