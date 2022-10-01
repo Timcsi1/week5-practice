@@ -25,9 +25,9 @@
   padding: 5px 0;
   margin-bottom: 10px;
   display: block;
+  transition: all 0, 5s ease;
 }
-
-button {
+#root button {
   width: 120px;
   height: 40px;
   position: fixed;
@@ -47,4 +47,9 @@ button {
 }
 .hidden {
   display: none !important;
+}
+
+.clicked {
+  transform: 180 deg;
+  transition: all 0, 5s ease;
 }/*# sourceMappingURL=style.css.map */

@@ -156,7 +156,6 @@ const initJanuaryEvent= function(){
         showDayInfo(day.textContent);
     })   
 } 
-let
 }
 
 //rootElement.insertAdjacentHTML("beforeend",monthComponent(year[monthIndex].nth, year[monthIndex].month, year[monthIndex].days));
