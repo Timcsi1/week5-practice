@@ -113,7 +113,7 @@ buttonElement.addEventListener("click",function(){
         buttonElement.setAttribute("disabled","");
     }*/
 
-    for(let monthIndex=0; monthIndex<12; monthIndex++){
+for(let monthIndex=0; monthIndex<12; monthIndex++){
         rootElement.insertAdjacentHTML(
             "beforeend",
         monthComponent(
@@ -125,7 +125,12 @@ buttonElement.addEventListener("click",function(){
 
 /*    initJanuaryEvents();*/
 
-const dayElements = document.querySelectorAll(".day")
+const dayElements = document.querySelectorAll(".day");
+
+for (let i=1; i<dayElements.length; i++){
+    dayElements[i].addEventListener("click", function(){
+    dayElements[i].classList.toggle("clicked");
+})
 /*dayElements.forEach(function(day){
     day.addEventListener("click",function(event){
         console.log(event);
@@ -134,11 +139,6 @@ const dayElements = document.querySelectorAll(".day")
     });
 });*/
 
-for (let i=1; i<dayElements.length; i++){
-    dayElements[i].addEventListener("click", function(){
-    dayElements[i].classList.toggle("clicked");
-});
-}
 
 //for(let i=1; i<dayElements.length; i++){
     //dayElements[i].addEventListener("click", function(){
@@ -165,18 +165,6 @@ const showDayInfo = function(dayIndex){
      } 
     }*/
 
-
-//for(let i=1; i<dayElements.length; i++){
-   // dayElements[i].addEventListener("click", function(){
-       // dayElements[i].classList.toggle("clicked");
-   // })
-/*dayElements.forEach(function(day){
-    day.addEventListener("click",function(event){
-        event.target.classlist.toggle("clicked")
-    })*/
-
 //rootElement.insertAdjacentHTML("beforeend",monthComponent(year[monthIndex].nth, year[monthIndex].month, year[monthIndex].days));
 
-//rootElement.insertAdjacentHTML("beforeend",monthComponent(2, "February", 28));
-//rootElement.style.color="blue" nem szabad csinálni, csak CSS-ben 
-})
+}})
