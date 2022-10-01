@@ -125,16 +125,16 @@ buttonElement.addEventListener("click",function(){
 
 /*    initJanuaryEvents();*/
 
-/*const dayElements = document.querySelectorAll(".day")
-dayElements.forEach(function(day){
+const dayElements = document.querySelectorAll(".day")
+/*dayElements.forEach(function(day){
     day.addEventListener("click",function(event){
         console.log(event);
-       // event.target.classlist.toggle("clicked");
+// event.target.classlist.toggle("clicked");
        day.classList.toggle("clicked");
-        });
-    });*/
+    });
+});*/
 
-for(let i=1; i<dayElements.length; i++){
+for (let i=1; i<dayElements.length; i++){
     dayElements[i].addEventListener("click", function(){
     dayElements[i].classList.toggle("clicked");
 });
@@ -144,8 +144,7 @@ for(let i=1; i<dayElements.length; i++){
     //dayElements[i].addEventListener("click", function(){
         //dayElements[i].classList.toggle("clicked");
     //});
-//}
-
+//})
 
 const hideDays = function(days) {
     for(let day of days) {
