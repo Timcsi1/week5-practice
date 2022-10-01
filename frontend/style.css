@@ -24,6 +24,7 @@
   box-sizing: border-box;
   padding: 5px 0;
   margin-bottom: 10px;
+  display: block;
 }
 
 button {
@@ -43,4 +44,7 @@ button {
   .day {
     font-size: 20px;
   }
+}
+.hidden {
+  display: none !important;
 }/*# sourceMappingURL=style.css.map */

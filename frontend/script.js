@@ -83,6 +83,7 @@ const monthComponent = function(nth, name, days){
         <section id="${nth}"class= "${name}">
             <h2>${name}</h2>
             <div class="days">${daysHTML}</div>
+            <div class="selected=
         </section>
     `
 };  
@@ -98,6 +99,7 @@ console.log(year[0])
 const rootElement =document.querySelector("#root");
 
 rootElement.insertAdjacentHTML("beforeend","<button>add month</button>");
+
 const buttonElement = rootElement.querySelector("button");
 
 //let monthIndex= 0;
@@ -112,17 +114,50 @@ buttonElement.addEventListener("click",function(){
     }*/
 
     for(let monthIndex=0; monthIndex<12; monthIndex++){
-        rootElement.insertAdjacentHTML
-        ("beforeend",
+        rootElement.insertAdjacentHTML(
+            "beforeend",
         monthComponent(
             year[monthIndex].nth, 
             year[monthIndex].month, 
-            year[monthIndex].days
-            )
+            year[monthIndex].days)
         );
     }
-});
+})
 
+//    initJanuaryEventListener();
+
+const dayElements = document.querySelectorAll(".day")
+
+for(let i=1; i<dayElements.length; i++){
+    dayElements[i].addEventListener("click", function(){
+        dayElements[i].classList.toggle("clicked");
+    })
+}
+/*dayElements.forEach(function(day){
+    day.addEventListener("click",function(event){
+        event.target.classlist.toggle("clicked")
+    })*/
+
+
+const hideDays= function(days) {
+    for (let day of days) {
+    day.classList.add("hidden");
+    }
+}
+const showDayInfo=function(dayIndex){
+    let selectedDay=document.querySelector(".January.selected-day");
+    selectedDay.textContent=`January ${dayIndex}`
+}
+const initJanuaryEvent= function(){
+   let days = document.querySelectorAll(".January.days.day");
+   for(let day of days) {
+   day.addEventListener("click",function(){
+        hideDays(days);
+        showDayInfo(day.textContent);
+    })   
+} 
+let
+}
 
 //rootElement.insertAdjacentHTML("beforeend",monthComponent(year[monthIndex].nth, year[monthIndex].month, year[monthIndex].days));
 
