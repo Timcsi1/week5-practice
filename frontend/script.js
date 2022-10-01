@@ -125,14 +125,20 @@ buttonElement.addEventListener("click",function(){
 
 /*    initJanuaryEvents();*/
 
-const dayElements = document.querySelectorAll(".day")
+/*const dayElements = document.querySelectorAll(".day")
 dayElements.forEach(function(day){
     day.addEventListener("click",function(event){
         console.log(event);
-        event.target.classlist.toggle("clicked");
+       // event.target.classlist.toggle("clicked");
+       day.classList.toggle("clicked");
         });
-    });
+    });*/
+
+for(let i=1; i<dayElements.length; i++){
+    dayElements[i].addEventListener("click", function(){
+    dayElements[i].classList.toggle("clicked");
 });
+}
 
 //for(let i=1; i<dayElements.length; i++){
     //dayElements[i].addEventListener("click", function(){
@@ -174,3 +180,4 @@ const showDayInfo = function(dayIndex){
 
 //rootElement.insertAdjacentHTML("beforeend",monthComponent(2, "February", 28));
 //rootElement.style.color="blue" nem szabad csinálni, csak CSS-ben 
+})
