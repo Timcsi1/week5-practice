@@ -83,7 +83,7 @@ const monthComponent = function(nth, name, days){
         <section id="${nth}"class= "${name}">
             <h2>${name}</h2>
             <div class="days">${daysHTML}</div>
-            <div class="selected-days"></div>
+            <div class="selected-day"></div>
         </section>
     `
 };  
@@ -121,22 +121,36 @@ buttonElement.addEventListener("click",function(){
             year[monthIndex].month, 
             year[monthIndex].days)
         );
-    }
+    };
 
-initJanuaryEvents();
+/*    initJanuaryEvents();*/
 
-})
+const dayElements = document.querySelectorAll(".day")
+dayElements.forEach(function(day){
+    day.addEventListener("click",function(event){
+        console.log(event);
+        event.target.classlist.toggle("clicked");
+        });
+    });
+});
+
+//for(let i=1; i<dayElements.length; i++){
+    //dayElements[i].addEventListener("click", function(){
+        //dayElements[i].classList.toggle("clicked");
+    //});
+//}
+
 
 const hideDays = function(days) {
-    for (let day of days) {
-    day.classList.add("hidden");
+    for(let day of days) {
+        day.classList.add("hidden");
     } 
 }
 const showDayInfo = function(dayIndex){
     let selectedDay = document.querySelector(".January .selected-day");
     selectedDay.textContent = `January${dayIndex}`
 }
-const initJanuaryEvents = function () {
+/*const initJanuaryEvents = function () {
     let days = document.querySelectorAll(".January .days .day");
     for(let day of days) {
         day.addEventListener("click",function(){
@@ -144,15 +158,13 @@ const initJanuaryEvents = function () {
          showDayInfo(day.textContent);
          })   
      } 
-    }
+    }*/
 
-const dayElements = document.querySelectorAll(".day")
 
-for(let i=1; i<dayElements.length; i++){
-    dayElements[i].addEventListener("click", function(){
-        dayElements[i].classList.toggle("clicked");
-    })
-}
+//for(let i=1; i<dayElements.length; i++){
+   // dayElements[i].addEventListener("click", function(){
+       // dayElements[i].classList.toggle("clicked");
+   // })
 /*dayElements.forEach(function(day){
     day.addEventListener("click",function(event){
         event.target.classlist.toggle("clicked")
