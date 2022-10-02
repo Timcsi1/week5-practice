@@ -42,7 +42,7 @@
 
 @media only screen and(max-width:800px){
     .day{
-        color:red;
+        color:rgb(120, 101, 175);
     }
 } 
 
@@ -63,27 +63,42 @@
     background-color: aquamarine;
 }
 .January{
-    background-color: blanchedalmond;
+    background-color: rgb(132, 206, 216);
+    align-items: center;
 }
 .February{
     color:blue;
+    background-color: rgb(40, 158, 158);
 }
 .March{
-    background-color:  blueviolet;
+    background-color:  rgb(230, 222, 238);
 }
 .April {
     font-style: italic;
+    background-color: rgb(184, 184, 239);
 }
 
 .May{
-    background-color: azure;
+    background-color: rgb(201, 234, 234);
 }
 .June{ font-weight: bold;
        color:cadetblue;
+       background-color:cornflowerblue;
        }
-.July{}
-.August{}
-.September{}
-.October{}
-.November{}
-.December{}
+.July{
+    color:darkblue;
+    background-color: darkcyan;
+}
+.August{
+    background-color: lightgreen;
+    color: lightseagreen;}
+.September{
+    background-color: mediumturquoise;
+    color: mediumpurple;
+}
+.October{background-color: mediumorchid;
+    color: mediumslateblue;}
+.November{background-color:mediumspringgreen ;
+    color: midnightblue;}
+.December{background-color:rgb(170, 224, 197) ;
+    color:mediumspringgreen ;}
